@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=3 uid="uid://cq5sow8knvnfe"]
+
+[ext_resource type="Texture2D" uid="uid://dphc88j32yqfh" path="res://Assets/Square.png" id="1_oolp2"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_siu27"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_siu27"]
+texture = ExtResource("1_oolp2")
+0:0/size_in_atlas = Vector2i(8, 8)
+0:0/0 = 0
+0:0/0/modulate = Color(0, 0, 0, 1)
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, 64, -64, -64, 64, -64, 64, 64)
+0:0/0/custom_data_0 = "normal"
+0:8/size_in_atlas = Vector2i(8, 8)
+0:8/0 = 0
+0:8/0/modulate = Color(0.61960787, 0, 1, 1)
+0:8/0/physics_layer_2/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+0:8/0/custom_data_0 = "bouncy"
+8:8/size_in_atlas = Vector2i(8, 8)
+8:8/0 = 0
+8:8/0/modulate = Color(1, 1, 0, 1)
+8:8/0/physics_layer_1/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+8:8/0/custom_data_0 = "stationary"
+8:0/size_in_atlas = Vector2i(8, 8)
+8:0/0 = 0
+8:0/0/modulate = Color(0, 0.9098039, 0, 1)
+8:0/0/physics_layer_2/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+8:0/0/custom_data_0 = "stationary"
+
+[sub_resource type="TileSet" id="TileSet_sx6hp"]
+physics_layer_0/collision_layer = 1
+physics_layer_0/physics_material = SubResource("PhysicsMaterial_siu27")
+physics_layer_1/collision_layer = 1
+physics_layer_2/collision_layer = 1
+custom_data_layer_0/name = "TileType"
+custom_data_layer_0/type = 4
+sources/1 = SubResource("TileSetAtlasSource_siu27")
+
+[node name="TileMap" type="TileMapLayer"]
+position = Vector2(210, -4)
+tile_set = SubResource("TileSet_sx6hp")
+rendering_quadrant_size = 1
+physics_quadrant_size = 1

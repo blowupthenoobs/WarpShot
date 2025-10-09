@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://buu15jlv0g6qr"]
+
+[ext_resource type="Script" uid="uid://b8ap6koom2rfc" path="res://Scripts/MainMenuScript.gd" id="1_46k1k"]
+[ext_resource type="PackedScene" uid="uid://fwbw5nwvnds6" path="res://Scenes/LevelButton.tscn" id="2_riirh"]
+[ext_resource type="Texture2D" uid="uid://71seeetmaark" path="res://Assets/CircleMask.png" id="3_v2at7"]
+[ext_resource type="Texture2D" uid="uid://dphc88j32yqfh" path="res://Assets/Square.png" id="4_0t1wx"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_koonp"]
+font_size = 100
+font_color = Color(0, 0.79607844, 1, 1)
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource("1_46k1k")
+LevelButton = ExtResource("2_riirh")
+StartingSpot = Vector2(-500, -170)
+maxButtonPerRow = 10
+buttonDistance = 100.0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Label" type="Label" parent="."]
+offset_left = -271.0
+offset_top = -339.0
+offset_right = 206.0
+offset_bottom = -184.0
+text = "WarpShot"
+label_settings = SubResource("LabelSettings_koonp")
+
+[node name="PlayerImage" type="Node2D" parent="."]
+position = Vector2(265, -260)
+rotation = -1.5707964
+scale = Vector2(0.21999635, 0.21999635)
+
+[node name="Sprite2D" type="Sprite2D" parent="PlayerImage"]
+texture = ExtResource("3_v2at7")
+
+[node name="Sprite2D2" type="Sprite2D" parent="PlayerImage"]
+position = Vector2(123, 0)
+scale = Vector2(0.4, 0.2)
+texture = ExtResource("4_0t1wx")

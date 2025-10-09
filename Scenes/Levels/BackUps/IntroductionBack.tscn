@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=4 uid="uid://b2xmqdh7kqla7"]
+
+[ext_resource type="PackedScene" uid="uid://bgt260xbae5cx" path="res://Scenes/CameraSetUp.tscn" id="1_rfnmm"]
+[ext_resource type="PackedScene" uid="uid://bx2tjcalsh32x" path="res://Scenes/MainCharacter.tscn" id="2_fnmvq"]
+[ext_resource type="PackedScene" uid="uid://dvi2shwij68b2" path="res://Scenes/BasicEnemy.tscn" id="3_tgraj"]
+[ext_resource type="PackedScene" uid="uid://cq5sow8knvnfe" path="res://Scenes/TileMap.tscn" id="4_oq86h"]
+
+[node name="Game" type="Node2D"]
+
+[node name="CameraSetUp" parent="." instance=ExtResource("1_rfnmm")]
+position = Vector2(316, -189)
+
+[node name="Player" parent="." instance=ExtResource("2_fnmvq")]
+position = Vector2(-131, 1.9999847)
+
+[node name="Enemy" parent="." instance=ExtResource("3_tgraj")]
+position = Vector2(759.00006, -380)
+
+[node name="Enemy2" parent="." instance=ExtResource("3_tgraj")]
+position = Vector2(759, 2)
+
+[node name="TileMap" parent="." instance=ExtResource("4_oq86h")]
+tile_map_data = PackedByteArray("AADy/wgAAQAAAAAAAAD6/wgAAQAAAAAAAAACAAgAAQAAAAAAAAAKAAgAAQAAAAAAAAASAAgAAQAAAAAAAAAaAAgAAQAAAAAAAAAiAAgAAQAAAAAAAAAqAAgAAQAAAAAAAAAqAAAAAQAAAAAAAAAqAPj/AQAAAAAAAAAqAPD/AQAAAAAAAAAqAOj/AQAAAAAAAAAqAOD/AQAAAAAAAAAiAOD/AQAAAAAAAAAaAOD/AQAAAAAAAAASAOD/AQAAAAAAAAAKAOD/AQAAAAAAAAACAOD/AQAAAAAAAAD6/+D/AQAAAAAAAADy/+D/AQAAAAAAAADq/+D/AQAAAAAAAADi/+D/AQAAAAAAAADi/+j/AQAAAAAAAADi//D/AQAAAAAAAADi//j/AQAAAAAAAADi/wAAAQAAAAAAAADi/wgAAQAAAAAAAADq/wgAAQAAAAAAAAA=")
+
+[node name="Enemy3" parent="." instance=ExtResource("3_tgraj")]
+position = Vector2(-132, -376)

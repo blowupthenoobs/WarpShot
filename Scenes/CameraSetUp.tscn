@@ -1,0 +1,221 @@
+[gd_scene load_steps=7 format=3 uid="uid://bgt260xbae5cx"]
+
+[ext_resource type="Script" uid="uid://dnjyjfwc3168k" path="res://Scripts/GameMenuScript.gd" id="1_5ybi7"]
+[ext_resource type="Texture2D" uid="uid://dphc88j32yqfh" path="res://Assets/Square.png" id="2_xtc5l"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_xtc5l"]
+font_size = 60
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_xtc5l"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ivy0x"]
+font_size = 40
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_ivy0x"]
+
+[node name="CameraSetUp" type="Camera2D" node_paths=PackedStringArray("CanvasModulator", "WinScreen", "DeathCracks")]
+top_level = true
+script = ExtResource("1_5ybi7")
+CanvasModulator = NodePath("CanvasModulate")
+glitchColor = Color(0.4862745, 0.6627451, 1, 1)
+WinScreen = NodePath("WinScreen")
+DeathCracks = NodePath("DeathCracks")
+
+[node name="WinScreen" type="Node2D" parent="."]
+visible = false
+
+[node name="Bg" type="Sprite2D" parent="WinScreen"]
+modulate = Color(0, 1, 0.21960784, 0.43529412)
+scale = Vector2(3.371094, 1.7734376)
+texture = ExtResource("2_xtc5l")
+
+[node name="Label" type="Label" parent="WinScreen"]
+offset_left = -169.00002
+offset_top = -201.0
+offset_right = 67.999985
+offset_bottom = -118.0
+scale = Vector2(1.4800003, 2.082643)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "You Win"
+label_settings = SubResource("LabelSettings_xtc5l")
+horizontal_alignment = 1
+vertical_alignment = 1
+language = "English"
+
+[node name="MenuButton" type="MenuButton" parent="WinScreen"]
+offset_left = -119.0
+offset_top = -1.0
+offset_right = 145.0
+offset_bottom = 263.0
+scale = Vector2(0.31999892, 0.31999892)
+button_group = SubResource("ButtonGroup_xtc5l")
+icon = ExtResource("2_xtc5l")
+
+[node name="Label2" type="Label" parent="WinScreen/MenuButton"]
+layout_mode = 0
+offset_right = 177.36542
+offset_bottom = 124.54168
+scale = Vector2(1.4800003, 2.082643)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "Main Menu"
+label_settings = SubResource("LabelSettings_ivy0x")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+language = "English"
+
+[node name="NextLevelButton" type="MenuButton" parent="WinScreen"]
+offset_left = 29.0
+offset_top = -1.0
+offset_right = 293.0
+offset_bottom = 263.0
+scale = Vector2(0.31999892, 0.31999892)
+button_group = SubResource("ButtonGroup_ivy0x")
+icon = ExtResource("2_xtc5l")
+
+[node name="Label3" type="Label" parent="WinScreen/NextLevelButton"]
+layout_mode = 0
+offset_right = 177.36542
+offset_bottom = 124.54168
+scale = Vector2(1.4800003, 2.082643)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "Next Level"
+label_settings = SubResource("LabelSettings_ivy0x")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+language = "English"
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+scale = Vector2(0.5, 0.5)
+
+[node name="DeathCracks" type="Node2D" parent="."]
+visible = false
+position = Vector2(331, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="DeathCracks"]
+modulate = Color(0, 0.79607844, 1, 1)
+scale = Vector2(2, 0.05)
+texture = ExtResource("2_xtc5l")
+
+[node name="Sprite2D2" type="Sprite2D" parent="DeathCracks"]
+modulate = Color(0, 0.79607844, 1, 1)
+position = Vector2(-148, -121)
+scale = Vector2(0.05, 1)
+texture = ExtResource("2_xtc5l")
+
+[node name="Sprite2D3" type="Sprite2D" parent="DeathCracks"]
+modulate = Color(0, 0.79607844, 1, 1)
+position = Vector2(-270, -244)
+scale = Vector2(1, 0.05)
+texture = ExtResource("2_xtc5l")
+
+[node name="Sprite2D4" type="Sprite2D" parent="DeathCracks"]
+modulate = Color(0, 0.79607844, 1, 1)
+position = Vector2(-391, -185)
+scale = Vector2(0.05, 0.5)
+texture = ExtResource("2_xtc5l")
+
+[node name="Sprite2D5" type="Sprite2D" parent="DeathCracks"]
+modulate = Color(0, 0.79607844, 1, 1)
+position = Vector2(-481.00003, -126)
+scale = Vector2(0.75, 0.05)
+texture = ExtResource("2_xtc5l")
+
+[node name="Sprite2D6" type="Sprite2D" parent="DeathCracks"]
+modulate = Color(0, 0.79607844, 1, 1)
+position = Vector2(-249, 59)
+scale = Vector2(0.05, 0.5)
+texture = ExtResource("2_xtc5l")
+
+[node name="Sprite2D7" type="Sprite2D" parent="DeathCracks"]
+modulate = Color(0, 0.79607844, 1, 1)
+position = Vector2(-248, 119)
+scale = Vector2(1, 0.05)
+texture = ExtResource("2_xtc5l")
+
+[node name="Sprite2D8" type="Sprite2D" parent="DeathCracks"]
+modulate = Color(0, 0.79607844, 1, 1)
+position = Vector2(-123, 230)
+scale = Vector2(0.05, 0.9)
+texture = ExtResource("2_xtc5l")
+
+[node name="Sprite2D9" type="Sprite2D" parent="DeathCracks"]
+modulate = Color(0, 0.79607844, 1, 1)
+position = Vector2(5, 229)
+scale = Vector2(1, 0.05)
+texture = ExtResource("2_xtc5l")
+
+[node name="Sprite2D10" type="Sprite2D" parent="DeathCracks"]
+modulate = Color(0, 0.79607844, 1, 1)
+position = Vector2(-369, 163)
+scale = Vector2(0.05, 0.7)
+texture = ExtResource("2_xtc5l")
+
+[node name="Sprite2D11" type="Sprite2D" parent="DeathCracks"]
+modulate = Color(0, 0.79607844, 1, 1)
+position = Vector2(-438, 247)
+scale = Vector2(1, 0.05)
+texture = ExtResource("2_xtc5l")
+
+[node name="Sprite2D12" type="Sprite2D" parent="DeathCracks"]
+modulate = Color(0, 0.79607844, 1, 1)
+position = Vector2(-517, 80)
+scale = Vector2(1.2, 0.05)
+texture = ExtResource("2_xtc5l")
+
+[node name="Sprite2D13" type="Sprite2D" parent="DeathCracks"]
+modulate = Color(0, 0.79607844, 1, 1)
+position = Vector2(81, -96)
+scale = Vector2(0.05, 0.8)
+texture = ExtResource("2_xtc5l")
+
+[node name="Sprite2D14" type="Sprite2D" parent="DeathCracks"]
+modulate = Color(0, 0.79607844, 1, 1)
+position = Vector2(-577, -211)
+scale = Vector2(0.05, 1)
+texture = ExtResource("2_xtc5l")
+
+[node name="Sprite2D15" type="Sprite2D" parent="DeathCracks"]
+modulate = Color(0, 0.79607844, 1, 1)
+position = Vector2(-665, 152)
+scale = Vector2(0.05, 0.7)
+texture = ExtResource("2_xtc5l")
+
+[node name="Sprite2D16" type="Sprite2D" parent="DeathCracks"]
+modulate = Color(0, 0.79607844, 1, 1)
+position = Vector2(-747.00006, 235)
+scale = Vector2(0.6, 0.05)
+texture = ExtResource("2_xtc5l")
+
+[node name="Sprite2D17" type="Sprite2D" parent="DeathCracks"]
+modulate = Color(0, 0.79607844, 1, 1)
+position = Vector2(-817, 87)
+scale = Vector2(0.05, 1.2)
+texture = ExtResource("2_xtc5l")
+
+[node name="Sprite2D18" type="Sprite2D" parent="DeathCracks"]
+modulate = Color(0, 0.79607844, 1, 1)
+position = Vector2(-893.00006, 26)
+scale = Vector2(0.6, 0.05)
+texture = ExtResource("2_xtc5l")
+
+[node name="Sprite2D19" type="Sprite2D" parent="DeathCracks"]
+modulate = Color(0, 0.79607844, 1, 1)
+position = Vector2(-747.2, -17.399994)
+scale = Vector2(0.6, 0.05)
+texture = ExtResource("2_xtc5l")
+
+[node name="Sprite2D20" type="Sprite2D" parent="DeathCracks"]
+modulate = Color(0, 0.79607844, 1, 1)
+position = Vector2(-712.2, -100.399994)
+scale = Vector2(0.05, 0.7)
+texture = ExtResource("2_xtc5l")
+
+[connection signal="pressed" from="WinScreen/MenuButton" to="." method="_on_menu_button_pressed"]
+[connection signal="pressed" from="WinScreen/NextLevelButton" to="." method="_on_next_level_button_pressed"]

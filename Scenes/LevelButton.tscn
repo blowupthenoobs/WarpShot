@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://fwbw5nwvnds6"]
+
+[ext_resource type="Texture2D" uid="uid://dphc88j32yqfh" path="res://Assets/Square.png" id="1_yoeyv"]
+[ext_resource type="Script" uid="uid://csdceqrjpogfg" path="res://Scripts/LevelButtonScript.gd" id="2_6qni7"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_v2at7"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_6qni7"]
+font_size = 90
+
+[node name="LevelButton" type="MenuButton" node_paths=PackedStringArray("label")]
+self_modulate = Color(0.105882354, 0.105882354, 0.09411765, 1)
+offset_right = 264.0
+offset_bottom = 264.0
+scale = Vector2(0.31999892, 0.31999892)
+button_group = SubResource("ButtonGroup_v2at7")
+icon = ExtResource("1_yoeyv")
+script = ExtResource("2_6qni7")
+label = NodePath("Label")
+
+[node name="Label" type="Label" parent="."]
+self_modulate = Color(0, 0.79607844, 1, 1)
+layout_mode = 0
+offset_right = 177.36542
+offset_bottom = 124.54168
+scale = Vector2(1.4800003, 2.082643)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "100"
+label_settings = SubResource("LabelSettings_6qni7")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+language = "English"
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
