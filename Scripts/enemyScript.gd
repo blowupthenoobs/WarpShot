@@ -1,6 +1,7 @@
 extends CharacterBody2D
 class_name EnemyScript
 
+@export var deathEffect: PackedScene
 @export var bullet: PackedScene
 @export var nozzleBase: Node2D
 @export var nozzleEnd: Node2D
@@ -34,6 +35,9 @@ func shoot(delta: float) -> void:
 	pass
 
 func die() -> void:
+	var instance = deathEffect.instantiate()
+	add_sibling(instance)
+	instance.starteffect(rotation, position)
 	enemyCount -= 1
 	
 	if(enemyCount == 0):

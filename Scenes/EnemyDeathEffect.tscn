@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://cb57oi2ulkvva"]
+
+[ext_resource type="Script" uid="uid://n150fu8w27g6" path="res://Scripts/VfxScripts/EnemyDeathEffectScript.gd" id="1_2wna0"]
+[ext_resource type="Texture2D" uid="uid://71seeetmaark" path="res://Assets/CircleMask.png" id="1_hqbvx"]
+[ext_resource type="Texture2D" uid="uid://dphc88j32yqfh" path="res://Assets/Square.png" id="2_2wna0"]
+
+[node name="EnemyDeathEffect" type="Node2D"]
+modulate = Color(0.12941177, 0.52156866, 1, 1)
+z_index = 10
+scale = Vector2(0.495, 0.495)
+script = ExtResource("1_2wna0")
+white = Color(1, 1, 1, 0)
+colorShiftSpeed = 7.0
+timeToStartColorShift = 0.007
+expansionSize = 1.1
+expansionSpeed = 3.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_hqbvx")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(123, 0)
+scale = Vector2(0.4, 0.2)
+texture = ExtResource("2_2wna0")

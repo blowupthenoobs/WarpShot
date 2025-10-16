@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dvi2shwij68b2" path="res://Scenes/BasicEnemy.tscn" id="3_4jqli"]
 [ext_resource type="PackedScene" uid="uid://cq5sow8knvnfe" path="res://Scenes/TileMap.tscn" id="4_pooer"]
 
-[node name="Game" type="Node2D"]
+[node name="Trickshot" type="Node2D"]
 
 [node name="CameraSetUp" parent="." instance=ExtResource("1_wqwg2")]
 position = Vector2(297, -79)

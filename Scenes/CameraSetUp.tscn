@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://bgt260xbae5cx"]
+[gd_scene load_steps=10 format=3 uid="uid://bgt260xbae5cx"]
 
 [ext_resource type="Script" uid="uid://dnjyjfwc3168k" path="res://Scripts/GameMenuScript.gd" id="1_5ybi7"]
 [ext_resource type="Texture2D" uid="uid://dphc88j32yqfh" path="res://Assets/Square.png" id="2_xtc5l"]
+[ext_resource type="Shader" uid="uid://cffoe1db4jjp7" path="res://Scripts/Shaders/GlitchShader.gdshader" id="3_ivy0x"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_xtc5l"]
 font_size = 60
@@ -15,13 +16,30 @@ font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="ButtonGroup" id="ButtonGroup_ivy0x"]
 
-[node name="CameraSetUp" type="Camera2D" node_paths=PackedStringArray("CanvasModulator", "WinScreen", "DeathCracks")]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ivy0x"]
+shader = ExtResource("3_ivy0x")
+shader_parameter/effectsToUse = 0
+shader_parameter/chromeAbberStrength = 0.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_itb62"]
+font_size = 100
+
+[node name="CameraSetUp" type="Camera2D" node_paths=PackedStringArray("ShaderController", "LevelName", "WinScreen", "Flash", "DeathSlider", "SlidePosition")]
 top_level = true
 script = ExtResource("1_5ybi7")
-CanvasModulator = NodePath("CanvasModulate")
+ShaderController = NodePath("ColorRect")
+LevelName = NodePath("LevelName")
 glitchColor = Color(0.4862745, 0.6627451, 1, 1)
+invisible = Color(1, 1, 1, 0)
 WinScreen = NodePath("WinScreen")
-DeathCracks = NodePath("DeathCracks")
+Flash = NodePath("WhiteFlash")
+DeathSlider = NodePath("DeathSlider/Slider")
+SlidePosition = NodePath("DeathSlider/RemoteTransform2D")
+slideSpeed = 50.0
+flashSpeed = 1.0
+levelTextFadeSpeed = 2.0
+maxChromeAbber = 5.0
+chromeAbberSpeed = 20.0
 
 [node name="WinScreen" type="Node2D" parent="."]
 visible = false
@@ -91,8 +109,14 @@ vertical_alignment = 1
 autowrap_mode = 2
 language = "English"
 
-[node name="CanvasModulate" type="CanvasModulate" parent="."]
-scale = Vector2(0.5, 0.5)
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = 48
+material = SubResource("ShaderMaterial_ivy0x")
+offset_left = -622.0
+offset_top = -356.0
+offset_right = 617.0
+offset_bottom = 334.0
+mouse_filter = 2
 
 [node name="DeathCracks" type="Node2D" parent="."]
 visible = false
@@ -216,6 +240,35 @@ modulate = Color(0, 0.79607844, 1, 1)
 position = Vector2(-712.2, -100.399994)
 scale = Vector2(0.05, 0.7)
 texture = ExtResource("2_xtc5l")
+
+[node name="WhiteFlash" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+z_index = 49
+position = Vector2(9.5, 33)
+scale = Vector2(5.2695313, 3.15625)
+texture = ExtResource("2_xtc5l")
+
+[node name="DeathSlider" type="Node2D" parent="."]
+modulate = Color(1, 1, 1, 0.29803923)
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="DeathSlider"]
+position = Vector2(0, -408)
+remote_path = NodePath("..")
+
+[node name="Slider" type="Sprite2D" parent="DeathSlider"]
+modulate = Color(0, 0.79607844, 1, 1)
+z_index = 50
+position = Vector2(-2, 363)
+scale = Vector2(4.78125, 0.1640625)
+texture = ExtResource("2_xtc5l")
+
+[node name="LevelName" type="Label" parent="."]
+offset_left = -568.0
+offset_top = 187.0
+offset_right = 578.0
+offset_bottom = 324.0
+text = "LevelNameHere"
+label_settings = SubResource("LabelSettings_itb62")
 
 [connection signal="pressed" from="WinScreen/MenuButton" to="." method="_on_menu_button_pressed"]
 [connection signal="pressed" from="WinScreen/NextLevelButton" to="." method="_on_next_level_button_pressed"]

@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://bx2tjcalsh32x"]
+[gd_scene load_steps=8 format=3 uid="uid://bx2tjcalsh32x"]
 
 [ext_resource type="Script" uid="uid://k7tqbw3s8l1j" path="res://Scripts/PlayerScript.gd" id="1_6lby2"]
 [ext_resource type="Texture2D" uid="uid://71seeetmaark" path="res://Assets/CircleMask.png" id="1_64g7q"]
+[ext_resource type="PackedScene" uid="uid://bafy8hrhgwi8i" path="res://Scenes/PlayerDeathEffect.tscn" id="2_rph44"]
 [ext_resource type="PackedScene" uid="uid://bfha68w01p1bs" path="res://Scenes/PlayerBullet.tscn" id="2_sdy4m"]
 [ext_resource type="Script" uid="uid://cqbge3rdua2r3" path="res://Scripts/PlayerAimScript.gd" id="3_cirx2"]
 [ext_resource type="Texture2D" uid="uid://dphc88j32yqfh" path="res://Assets/Square.png" id="3_xcak5"]
@@ -13,6 +14,7 @@ radius = 126.035706
 z_index = 5
 scale = Vector2(0.495001, 0.495001)
 script = ExtResource("1_6lby2")
+deathEffect = ExtResource("2_rph44")
 bullet = ExtResource("2_sdy4m")
 nozzleBase = NodePath("Nozzle")
 nozzleEnd = NodePath("Nozzle/NozzlePoint")

@@ -2,6 +2,7 @@
 extends CharacterBody2D
 class_name PlayerScript
 
+@export var deathEffect: PackedScene
 @export var bullet: PackedScene
 @export var nozzleBase: Node2D
 @export var nozzleEnd: Node2D
@@ -28,7 +29,8 @@ func teleport(newPos: Vector2) -> void:
 	pass
 
 func die() -> void:
-	print("died")
-	EnemyScript.enemyCount = 0
-	get_tree().reload_current_scene()
+	var instance = deathEffect.instantiate()
+	add_sibling(instance)
+	instance.starteffect(nozzleBase.rotation, position)
+	visible = false
 	pass

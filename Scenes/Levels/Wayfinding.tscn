@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dvi2shwij68b2" path="res://Scenes/BasicEnemy.tscn" id="3_tmiu7"]
 [ext_resource type="PackedScene" uid="uid://cq5sow8knvnfe" path="res://Scenes/TileMap.tscn" id="4_x41td"]
 
-[node name="Game" type="Node2D"]
+[node name="Wayfinding" type="Node2D"]
 
 [node name="CameraSetUp" parent="." instance=ExtResource("1_8ewmi")]
 position = Vector2(604, -443)

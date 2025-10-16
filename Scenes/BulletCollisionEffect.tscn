@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://b112oc67ogonh"]
+
+[ext_resource type="Texture2D" uid="uid://71seeetmaark" path="res://Assets/CircleMask.png" id="1_bsmlc"]
+[ext_resource type="Script" uid="uid://ure2lgo7mx4r" path="res://Scripts/VfxScripts/BulletCollisionEffectScript.gd" id="1_f34vi"]
+
+[node name="BulletCollisionEffect" type="Node2D"]
+script = ExtResource("1_f34vi")
+palerInitialColor = Color(0.8425332, 0.41612265, 0.9961898, 1)
+fadeOutWhite = Color(1, 1, 1, 0)
+initialColorShiftSpeed = 0.02
+timeToStartColorShift = 0.002
+fadeOutSpeed = 25.0
+expansionSpeed = 20.0
+shrinkSpeed = 50.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.7764706, 0.05882353, 0.972549, 1)
+z_index = 15
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_bsmlc")

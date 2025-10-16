@@ -1,5 +1,6 @@
 extends "res://Scripts/BulletScript.gd"
 
+@export var implosionEffect: PackedScene
 var player: PlayerScript
 
 var mostRecentBounce = null
@@ -23,8 +24,7 @@ func collisionEffect(collision: KinematicCollision2D):
 		
 		match data.get_custom_data("TileType"):
 			"normal":
-				player.die()
-				queue_free()
+				MenuScript.instance.badTeleport()
 			"stationary":
 				player.teleport(position)
 				queue_free()
@@ -44,8 +44,11 @@ func collisionEffect(collision: KinematicCollision2D):
 				print("tile type undefined")
 				queue_free()
 		return
-		pass
 	else:
-		player.die()
+		MenuScript.instance.stopGame = true
+		
+		var instance = implosionEffect.instantiate()
+		add_sibling(instance)
+		instance.position = collision.get_position()
 		#player.teleport(position)
 	queue_free()

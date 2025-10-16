@@ -8,6 +8,6 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if(!MenuScript.instance.stopGame):
+	if(!MenuScript.instance.stopGame || MenuScript.instance.rotateAnyway):
 		look_at(get_global_mouse_position())
 	pass
