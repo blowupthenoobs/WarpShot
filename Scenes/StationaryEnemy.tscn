@@ -17,6 +17,7 @@ deathEffect = ExtResource("2_q5q6u")
 bullet = ExtResource("3_uwihf")
 nozzleBase = NodePath("Nozzle")
 nozzleEnd = NodePath("Nozzle/NozzlePoint")
+isStationary = true
 maxCooldown = 1.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

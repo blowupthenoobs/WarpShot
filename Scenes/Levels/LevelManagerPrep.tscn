@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b8tikr5ygeha4"]
+[gd_scene load_steps=10 format=3 uid="uid://b8tikr5ygeha4"]
 
 [ext_resource type="Script" uid="uid://cin4hot7su1ua" path="res://Scripts/LevelManagerScript.gd" id="1_sgesf"]
 [ext_resource type="PackedScene" uid="uid://buu15jlv0g6qr" path="res://Scenes/Levels/MainMenu.tscn" id="2_cpx2w"]
@@ -8,8 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://c52h3wjwydwgt" path="res://Scenes/Levels/Trickshot.tscn" id="4_va1s1"]
 [ext_resource type="PackedScene" uid="uid://8swp5v1els5g" path="res://Scenes/Levels/Sequencing.tscn" id="5_4mvt3"]
 [ext_resource type="PackedScene" uid="uid://crxc8i5uxuu0" path="res://Scenes/Levels/Repositioning.tscn" id="5_hrhqs"]
+[ext_resource type="PackedScene" uid="uid://dakq2k8g2djy8" path="res://Scenes/Levels/FriendlyFire.tscn" id="9_2k6iy"]
 
 [node name="LevelManagerPrep" type="Node2D"]
 script = ExtResource("1_sgesf")
 StartingScene = ExtResource("2_cpx2w")
-LevelList = Array[PackedScene]([ExtResource("3_hrhqs"), ExtResource("4_4mvt3"), ExtResource("5_4mvt3"), ExtResource("4_cpx2w"), ExtResource("5_hrhqs"), ExtResource("4_va1s1")])
+LevelList = Array[PackedScene]([ExtResource("3_hrhqs"), ExtResource("4_4mvt3"), ExtResource("5_4mvt3"), ExtResource("4_cpx2w"), ExtResource("5_hrhqs"), ExtResource("4_va1s1"), ExtResource("9_2k6iy")])

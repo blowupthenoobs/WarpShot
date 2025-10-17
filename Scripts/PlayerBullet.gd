@@ -36,6 +36,14 @@ func collisionEffect(collision: KinematicCollision2D):
 				if (collision.get_normal().y != 0):
 					bounceDirection.y *= -1
 				
+				
+				if((bounceDirection == movementDirection * -1)):
+					if(abs(collision.get_normal().x) > abs(collision.get_normal().y)):
+						bounceDirection.y *= -1
+					else:
+						bounceDirection.x *= -1
+					pass
+				
 				if(mostRecentBounce != cell_coord):
 					super.SetUpBullet(position, (bounceDirection) * 1.15)
 				mostRecentBounce = cell_coord
@@ -52,3 +60,11 @@ func collisionEffect(collision: KinematicCollision2D):
 		instance.position = collision.get_position()
 		#player.teleport(position)
 	queue_free()
+	
+	
+func VectorsAreEqual(vectorA: Vector2, vectorB: Vector2) -> bool:
+	if(abs(vectorA.x - vectorB.x) > .001):
+		return false
+	if(abs(vectorA.y - vectorB.y) > .001):
+		return false
+	return true

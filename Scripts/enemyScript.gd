@@ -5,6 +5,7 @@ class_name EnemyScript
 @export var bullet: PackedScene
 @export var nozzleBase: Node2D
 @export var nozzleEnd: Node2D
+@export var isStationary: bool = false
 
 static var player: PlayerScript
 
@@ -19,7 +20,8 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 func _physics_process(delta: float) -> void:
-	nozzleBase.look_at(player.position)
+	if(!isStationary):
+		nozzleBase.look_at(player.position)
 	shoot(delta)
 	move_and_slide()
 
