@@ -4,8 +4,9 @@ extends MenuButton
 var levelHeld: PackedScene
 var levelNumber: int
 
-func SetUpButton(levelContent: PackedScene, levelNumber: int) -> void:
+func SetUpButton(levelContent: PackedScene, handedNumber: int) -> void:
 	levelHeld = levelContent
+	levelNumber = handedNumber
 	label.text = str(levelNumber)
 	pass
 
