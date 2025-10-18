@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://beb11wbwrg0u4"]
+
+[ext_resource type="Script" uid="uid://c78jv4khe44xs" path="res://Scripts/EnemyBulletScript.gd" id="1_tahde"]
+[ext_resource type="Texture2D" uid="uid://dphc88j32yqfh" path="res://Assets/Square.png" id="2_tahde"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lwdud"]
+size = Vector2(250.00226, 75.00066)
+
+[node name="Bullet" type="CharacterBody2D"]
+scale = Vector2(0.07999929, 0.07999929)
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("1_tahde")
+maxSpeed = 100.0
+accelleration = 100000.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.8627451, 0, 0, 1)
+rotation = 1.5707964
+scale = Vector2(0.3, 1)
+texture = ExtResource("2_tahde")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1.1919344e-06, 5.960515e-06)
+scale = Vector2(0.9999997, 0.9999997)
+shape = SubResource("RectangleShape2D_lwdud")

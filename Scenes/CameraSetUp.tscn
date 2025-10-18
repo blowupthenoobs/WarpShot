@@ -46,6 +46,7 @@ visible = false
 
 [node name="Bg" type="Sprite2D" parent="WinScreen"]
 modulate = Color(0, 1, 0.21960784, 0.43529412)
+z_index = 50
 scale = Vector2(3.371094, 1.7734376)
 texture = ExtResource("2_xtc5l")
 

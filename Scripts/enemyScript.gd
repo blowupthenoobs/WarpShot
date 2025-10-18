@@ -10,6 +10,7 @@ class_name EnemyScript
 static var player: PlayerScript
 
 @export var maxCooldown: float
+@export var startingCooldown: float = 0
 var currentCooldown: float
 
 static var enemyCount: int
@@ -17,6 +18,7 @@ static var enemyCount: int
 
 func _ready() -> void:
 	enemyCount += 1
+	currentCooldown = startingCooldown
 	pass # Replace with function body.
 
 func _physics_process(delta: float) -> void:

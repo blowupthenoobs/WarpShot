@@ -13,6 +13,7 @@ radius = 126.035706
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("nozzleBase", "nozzleEnd")]
 z_index = 5
 scale = Vector2(0.495001, 0.495001)
+collision_layer = 5
 script = ExtResource("1_6lby2")
 deathEffect = ExtResource("2_rph44")
 bullet = ExtResource("2_sdy4m")

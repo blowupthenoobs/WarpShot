@@ -65,5 +65,5 @@ void fragment() {
 	}
 
 	COLOR = shaderMix;
-	COLOR = bg; //So that I can get nicer images of the levels
+	//COLOR = bg; //So that I can get nicer images of the levels
 }

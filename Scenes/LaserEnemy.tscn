@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=3 uid="uid://dhketkdokdf8r"]
+
+[ext_resource type="Script" uid="uid://mktyxyqaklk4" path="res://Scripts/enemyScript.gd" id="1_nl8md"]
+[ext_resource type="PackedScene" uid="uid://cb57oi2ulkvva" path="res://Scenes/EnemyDeathEffect.tscn" id="2_rv6q6"]
+[ext_resource type="PackedScene" uid="uid://beb11wbwrg0u4" path="res://Scenes/EnemyLaser.tscn" id="3_nl8md"]
+[ext_resource type="Texture2D" uid="uid://71seeetmaark" path="res://Assets/CircleMask.png" id="4_kgiwh"]
+[ext_resource type="Texture2D" uid="uid://dphc88j32yqfh" path="res://Assets/Square.png" id="5_ulbv1"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_64g7q"]
+radius = 126.035706
+
+[node name="Enemy" type="CharacterBody2D" node_paths=PackedStringArray("nozzleBase", "nozzleEnd")]
+z_index = 5
+scale = Vector2(0.495001, 0.495001)
+script = ExtResource("1_nl8md")
+deathEffect = ExtResource("2_rv6q6")
+bullet = ExtResource("3_nl8md")
+nozzleBase = NodePath("Nozzle")
+nozzleEnd = NodePath("Nozzle/NozzlePoint")
+maxCooldown = 2.5
+startingCooldown = 1.5
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.23031491, 0.23031494, 0.23031494, 1)
+texture = ExtResource("4_kgiwh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("CircleShape2D_64g7q")
+
+[node name="Nozzle" type="RemoteTransform2D" parent="."]
+scale = Vector2(1.0695187, 1.0695187)
+remote_path = NodePath("..")
+
+[node name="Sprite2D" type="Sprite2D" parent="Nozzle"]
+modulate = Color(0.23031491, 0.23031494, 0.23031494, 1)
+position = Vector2(123, 0)
+scale = Vector2(0.4, 0.2)
+texture = ExtResource("5_ulbv1")
+
+[node name="NozzlePoint" type="RemoteTransform2D" parent="Nozzle"]
+position = Vector2(175, 0)
+remote_path = NodePath("..")
