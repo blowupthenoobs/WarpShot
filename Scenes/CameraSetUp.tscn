@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://bgt260xbae5cx"]
+[gd_scene load_steps=11 format=3 uid="uid://bgt260xbae5cx"]
 
 [ext_resource type="Script" uid="uid://dnjyjfwc3168k" path="res://Scripts/GameMenuScript.gd" id="1_5ybi7"]
+[ext_resource type="PackedScene" uid="uid://d4i8r3iq24njo" path="res://Scenes/SoundEffectPlayer.tscn" id="2_itb62"]
 [ext_resource type="Texture2D" uid="uid://dphc88j32yqfh" path="res://Assets/Square.png" id="2_xtc5l"]
 [ext_resource type="Shader" uid="uid://cffoe1db4jjp7" path="res://Scripts/Shaders/GlitchShader.gdshader" id="3_ivy0x"]
 
@@ -40,6 +41,7 @@ flashSpeed = 1.0
 levelTextFadeSpeed = 2.0
 maxChromeAbber = 5.0
 chromeAbberSpeed = 20.0
+soundEffectPlayer = ExtResource("2_itb62")
 
 [node name="WinScreen" type="Node2D" parent="."]
 visible = false

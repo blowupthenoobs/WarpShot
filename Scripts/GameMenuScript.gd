@@ -17,6 +17,7 @@ enum ShaderMode {GrayScale = 2, Desaturate = 3, ChromeAber = 5}
 @export var levelTextFadeSpeed: float
 @export var maxChromeAbber: float
 @export var chromeAbberSpeed: float
+@export var soundEffectPlayer: PackedScene
 
 static var instance: MenuScript
 static var level: String
@@ -68,6 +69,13 @@ func _on_next_level_button_pressed() -> void:
 	else:
 		_on_menu_button_pressed()
 	pass # Replace with function body.
+
+
+func PlaySound(sound: AudioStream, vol: float, variation: float = 0) -> void:
+	var instance = soundEffectPlayer.instantiate()
+	add_sibling(instance)
+	instance.PlaySound(sound, vol, variation)
+	pass
 
 
 func playerDeath() -> void:

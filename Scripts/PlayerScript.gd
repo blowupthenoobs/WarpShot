@@ -4,9 +4,10 @@ class_name PlayerScript
 
 @export var deathEffect: PackedScene
 @export var bullet: PackedScene
+@export var shootSoundEffect: AudioStream
+@export var teleportSoundEffect: AudioStream
 @export var nozzleBase: Node2D
 @export var nozzleEnd: Node2D
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	EnemyScript.player = self
@@ -22,10 +23,12 @@ func _input(event: InputEvent) -> void:
 		var instance = bullet.instantiate()
 		add_sibling(instance)
 		instance.SetUpPlayerBullet(nozzleEnd.global_position, (nozzleEnd.global_position - nozzleBase.global_position).normalized(), self)
+		MenuScript.instance.PlaySound(shootSoundEffect, 0)
 	pass
 
 func teleport(newPos: Vector2) -> void:
 	position = newPos
+	MenuScript.instance.PlaySound(teleportSoundEffect, 0)
 	pass
 
 func die() -> void:

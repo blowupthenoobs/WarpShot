@@ -33,5 +33,5 @@ func collisionEffect(collision: KinematicCollision2D):
 				if(mostRecentBounce != cell_coord):
 					super.SetUpBullet(position, (bounceDirection) * 1.15)
 				mostRecentBounce = cell_coord
-		return
+				return
 	queue_free()
