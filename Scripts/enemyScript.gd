@@ -3,6 +3,7 @@ class_name EnemyScript
 
 @export var deathEffect: PackedScene
 @export var bullet: PackedScene
+@export var shootSoundEffect: AudioStream
 @export var nozzleBase: Node2D
 @export var nozzleEnd: Node2D
 @export var isStationary: bool = false
@@ -33,6 +34,7 @@ func shoot(delta: float) -> void:
 		var instance = bullet.instantiate()
 		add_sibling(instance)
 		instance.SetUpBullet(nozzleEnd.global_position, (nozzleEnd.global_position - nozzleBase.global_position).normalized())
+		MenuScript.instance.PlaySound(shootSoundEffect, 0)
 		currentCooldown = 0
 	else:
 		currentCooldown += delta

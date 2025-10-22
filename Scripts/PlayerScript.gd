@@ -23,7 +23,7 @@ func _input(event: InputEvent) -> void:
 		var instance = bullet.instantiate()
 		add_sibling(instance)
 		instance.SetUpPlayerBullet(nozzleEnd.global_position, (nozzleEnd.global_position - nozzleBase.global_position).normalized(), self)
-		MenuScript.instance.PlaySound(shootSoundEffect, 0)
+		MenuScript.instance.PlaySound(shootSoundEffect, 5)
 	pass
 
 func teleport(newPos: Vector2) -> void:

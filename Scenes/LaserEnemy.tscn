@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://dhketkdokdf8r"]
+[gd_scene load_steps=8 format=3 uid="uid://dhketkdokdf8r"]
 
 [ext_resource type="Script" uid="uid://mktyxyqaklk4" path="res://Scripts/enemyScript.gd" id="1_nl8md"]
 [ext_resource type="PackedScene" uid="uid://cb57oi2ulkvva" path="res://Scenes/EnemyDeathEffect.tscn" id="2_rv6q6"]
 [ext_resource type="PackedScene" uid="uid://beb11wbwrg0u4" path="res://Scenes/EnemyLaser.tscn" id="3_nl8md"]
 [ext_resource type="Texture2D" uid="uid://71seeetmaark" path="res://Assets/CircleMask.png" id="4_kgiwh"]
+[ext_resource type="AudioStream" uid="uid://clokals606l36" path="res://Sounds/EnemyFire.wav" id="4_rv6q6"]
 [ext_resource type="Texture2D" uid="uid://dphc88j32yqfh" path="res://Assets/Square.png" id="5_ulbv1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_64g7q"]
@@ -15,6 +16,7 @@ scale = Vector2(0.495001, 0.495001)
 script = ExtResource("1_nl8md")
 deathEffect = ExtResource("2_rv6q6")
 bullet = ExtResource("3_nl8md")
+shootSoundEffect = ExtResource("4_rv6q6")
 nozzleBase = NodePath("Nozzle")
 nozzleEnd = NodePath("Nozzle/NozzlePoint")
 maxCooldown = 2.5
