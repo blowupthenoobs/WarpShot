@@ -23,4 +23,5 @@ func _ready() -> void:
 			currentColumn = 0
 			currentRow += 1
 		pass
-	pass # Replace with function body.
+	AudioManagerScript.instance.StartMainMenuMusic()
+	pass

@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://cfiv1u83vn7i5"]
+
+[ext_resource type="AudioStream" uid="uid://bxn74v3rvdxjs" path="res://Sounds/WarpMenu.ogg" id="1_dygvs"]
+[ext_resource type="Script" uid="uid://dhxo6hwjjwpjc" path="res://Scripts/AudioManagerScript.gd" id="2_i2xd5"]
+[ext_resource type="AudioStream" uid="uid://clokals606l36" path="res://Sounds/EnemyFire.wav" id="3_u6owb"]
+
+[node name="AudioManager" type="Node2D" node_paths=PackedStringArray("MusicPlayer")]
+script = ExtResource("2_i2xd5")
+MusicPlayer = NodePath("Music")
+MainMenuMusic = ExtResource("1_dygvs")
+startingMenuDb = -50.0
+menuMusicDbShiftSpeed = 0.1
+GameMusic = ExtResource("3_u6owb")
+
+[node name="Music" type="AudioStreamPlayer2D" parent="."]
+volume_db = 15.0
+bus = &"Music"

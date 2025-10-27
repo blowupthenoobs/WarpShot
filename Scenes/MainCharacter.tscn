@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://cqbge3rdua2r3" path="res://Scripts/PlayerAimScript.gd" id="3_cirx2"]
 [ext_resource type="Texture2D" uid="uid://dphc88j32yqfh" path="res://Assets/Square.png" id="3_xcak5"]
 [ext_resource type="AudioStream" uid="uid://c6dqrmlv50cic" path="res://Sounds/ShootEffect.wav" id="4_8bmck"]
-[ext_resource type="AudioStream" uid="uid://bjf4cwp2bn7lb" path="res://Sounds/Teleport.wav" id="5_xyhcr"]
+[ext_resource type="AudioStream" uid="uid://buvtvyi2uplq8" path="res://Sounds/TeleportTrimmed.wav" id="5_xyhcr"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_64g7q"]
 radius = 126.035706
@@ -40,6 +40,9 @@ script = ExtResource("3_cirx2")
 position = Vector2(123, 0)
 scale = Vector2(0.4, 0.2)
 texture = ExtResource("3_xcak5")
+
+[node name="AimingTool" type="Sprite2D" parent="Nozzle"]
+z_index = -100
 
 [node name="NozzlePoint" type="RemoteTransform2D" parent="Nozzle"]
 position = Vector2(175, 0)

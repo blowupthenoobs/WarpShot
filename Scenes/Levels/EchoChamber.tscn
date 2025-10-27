@@ -8,7 +8,6 @@
 [node name="EchoChamber" type="Node2D"]
 
 [node name="CameraSetUp" parent="." instance=ExtResource("1_cuux3")]
-visible = false
 position = Vector2(604, -443)
 scale = Vector2(2.273, 2.273)
 zoom = Vector2(0.44, 0.44)
