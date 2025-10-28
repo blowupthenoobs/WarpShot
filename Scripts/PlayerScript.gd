@@ -8,7 +8,8 @@ class_name PlayerScript
 @export var teleportSoundEffect: AudioStream
 @export var nozzleBase: Node2D
 @export var nozzleEnd: Node2D
-# Called when the node enters the scene tree for the first time.
+@export var laser: AimLaserScript
+
 func _ready() -> void:
 	EnemyScript.player = self
 	pass # Replace with function body.
@@ -24,6 +25,12 @@ func _input(event: InputEvent) -> void:
 		add_sibling(instance)
 		instance.SetUpPlayerBullet(nozzleEnd.global_position, (nozzleEnd.global_position - nozzleBase.global_position).normalized(), self)
 		MenuScript.instance.PlaySound(shootSoundEffect, 5)
+		
+	if(event.is_action_pressed("FireAimingLaser")):
+		laser.setCasting(true)
+		print("running")
+	elif(event.is_action_released("FireAimingLaser")):
+		laser.setCasting(false)
 	pass
 
 func teleport(newPos: Vector2) -> void:

@@ -6,6 +6,8 @@
 
 [node name="Bullet" type="CharacterBody2D"]
 scale = Vector2(0.07999929, 0.07999929)
+collision_layer = 2
+collision_mask = 3
 script = ExtResource("1_65pnx")
 implosionEffect = ExtResource("2_8osiq")
 maxSpeed = 1000.0

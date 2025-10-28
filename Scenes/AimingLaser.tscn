@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://c0mw4okidpb3b"]
+
+[ext_resource type="Script" uid="uid://c4ritsaw306mg" path="res://Scripts/AimLaserScript.gd" id="1_4f7j8"]
+[ext_resource type="Texture2D" uid="uid://71seeetmaark" path="res://Assets/CircleMask.png" id="2_p6jnw"]
+
+[node name="AimingLaser" type="RayCast2D" node_paths=PackedStringArray("laser", "predictedLandedDot")]
+exclude_parent = false
+target_position = Vector2(500, 0)
+collide_with_areas = true
+script = ExtResource("1_4f7j8")
+laser = NodePath("Line2D")
+predictedLandedDot = NodePath("Sprite2D")
+startLength = 5.0
+maxLength = 10000000000000.0
+laserWidth = 10.0
+laserSpeed = 100.0
+firingTime = 0.05
+
+[node name="Line2D" type="Line2D" parent="."]
+z_index = -100
+points = PackedVector2Array(0, 0, 10000, 0)
+default_color = Color(0.12941177, 0.52156866, 1, 0.19607843)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.12941177, 0.52156866, 1, 0.39215687)
+z_index = -99
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_p6jnw")

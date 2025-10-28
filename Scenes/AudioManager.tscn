@@ -9,7 +9,7 @@ script = ExtResource("2_i2xd5")
 MusicPlayer = NodePath("Music")
 MainMenuMusic = ExtResource("1_dygvs")
 startingMenuDb = -50.0
-menuMusicDbShiftSpeed = 0.1
+menuMusicDbShiftSpeed = 0.3
 GameMusic = ExtResource("3_u6owb")
 
 [node name="Music" type="AudioStreamPlayer2D" parent="."]

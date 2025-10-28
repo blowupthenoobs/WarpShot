@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bx2tjcalsh32x"]
+[gd_scene load_steps=11 format=3 uid="uid://bx2tjcalsh32x"]
 
 [ext_resource type="Script" uid="uid://k7tqbw3s8l1j" path="res://Scripts/PlayerScript.gd" id="1_6lby2"]
 [ext_resource type="Texture2D" uid="uid://71seeetmaark" path="res://Assets/CircleMask.png" id="1_64g7q"]
@@ -8,11 +8,12 @@
 [ext_resource type="Texture2D" uid="uid://dphc88j32yqfh" path="res://Assets/Square.png" id="3_xcak5"]
 [ext_resource type="AudioStream" uid="uid://c6dqrmlv50cic" path="res://Sounds/ShootEffect.wav" id="4_8bmck"]
 [ext_resource type="AudioStream" uid="uid://buvtvyi2uplq8" path="res://Sounds/TeleportTrimmed.wav" id="5_xyhcr"]
+[ext_resource type="PackedScene" uid="uid://c0mw4okidpb3b" path="res://Scenes/AimingLaser.tscn" id="9_sko2u"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_64g7q"]
 radius = 126.035706
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("nozzleBase", "nozzleEnd")]
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("nozzleBase", "nozzleEnd", "laser")]
 z_index = 5
 scale = Vector2(0.495001, 0.495001)
 collision_layer = 5
@@ -23,6 +24,7 @@ shootSoundEffect = ExtResource("4_8bmck")
 teleportSoundEffect = ExtResource("5_xyhcr")
 nozzleBase = NodePath("Nozzle")
 nozzleEnd = NodePath("Nozzle/NozzlePoint")
+laser = NodePath("Nozzle/AimingLaser")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_64g7q")
@@ -41,8 +43,8 @@ position = Vector2(123, 0)
 scale = Vector2(0.4, 0.2)
 texture = ExtResource("3_xcak5")
 
-[node name="AimingTool" type="Sprite2D" parent="Nozzle"]
-z_index = -100
+[node name="AimingLaser" parent="Nozzle" instance=ExtResource("9_sko2u")]
+target_position = Vector2(10000000000000, 0)
 
 [node name="NozzlePoint" type="RemoteTransform2D" parent="Nozzle"]
 position = Vector2(175, 0)
