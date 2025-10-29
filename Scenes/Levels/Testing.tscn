@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=4 uid="uid://bnhyo0mvd15y2"]
+
+[ext_resource type="PackedScene" uid="uid://bgt260xbae5cx" path="res://Scenes/CameraSetUp.tscn" id="1_iedoh"]
+[ext_resource type="PackedScene" uid="uid://bx2tjcalsh32x" path="res://Scenes/MainCharacter.tscn" id="2_xrjuc"]
+[ext_resource type="PackedScene" uid="uid://cq5sow8knvnfe" path="res://Scenes/TileMap.tscn" id="4_ymbfr"]
+
+[node name="Introduction" type="Node2D"]
+
+[node name="CameraSetUp" parent="." instance=ExtResource("1_iedoh")]
+position = Vector2(316, -189)
+
+[node name="Player" parent="." instance=ExtResource("2_xrjuc")]
+position = Vector2(-131, 1.9999847)
+
+[node name="TileMap" parent="." instance=ExtResource("4_ymbfr")]
+tile_map_data = PackedByteArray("AADy/wgAAQAAAAAAAAD6/wgAAQAAAAAAAAACAAgAAQAAAAAAAAAKAAgAAQAAAAAAAAASAAgAAQAAAAAAAAAaAAgAAQAAAAAAAAAiAAgAAQAAAAAAAAAqAAgAAQAAAAAAAAAqAAAAAQAAAAAAAAAqAPj/AQAAAAAAAAAqAPD/AQAAAAAAAAAqAOj/AQAAAAAAAAAqAOD/AQAAAAAAAAAiAOD/AQAAAAAAAAAaAOD/AQAAAAAAAAASAOD/AQAAAAAAAAAKAOD/AQAAAAAAAAACAOD/AQAAAAAAAAD6/+D/AQAAAAAAAADy/+D/AQAAAAAAAADq/+D/AQAAAAAAAADi/+D/AQAAAAAAAADi/+j/AQAAAAAAAADi//D/AQAAAAAAAADi//j/AQAAAAAAAADi/wAAAQAAAAAAAADi/wgAAQAAAAAAAADq/wgAAQAAAAAAAAA=")

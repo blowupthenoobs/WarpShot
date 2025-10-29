@@ -19,6 +19,8 @@ enum ShaderMode {GrayScale = 2, Desaturate = 3, ChromeAber = 5}
 @export var chromeAbberSpeed: float
 @export var soundEffectPlayer: PackedScene
 
+@export var TeleportSFX: AudioStream
+
 static var instance: MenuScript
 static var level: String
 var stopGame: bool = false
@@ -86,6 +88,8 @@ func playerDeath() -> void:
 
 func badTeleport() -> void:
 	stopGame = true
+	AudioManagerScript.FailedTeleportEffect()
+	PlaySound(TeleportSFX, 0)
 	TurnOnEffect(ShaderMode.ChromeAber)
 	pass
 

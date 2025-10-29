@@ -33,6 +33,7 @@ func StartMainMenuMusic() -> void:
 	MusicPlayer.volume_db = startingMenuDb
 	songPlaying = "mainMenu"
 	MusicPlayer.playing = true
+	TurnOffSfxEffects()
 	pass
 
 func StartGameMusic() -> void:
@@ -41,4 +42,19 @@ func StartGameMusic() -> void:
 		MusicPlayer.volume_db = startingGameDb
 		songPlaying = "game"
 		MusicPlayer.playing = true
+	TurnOffSfxEffects()
+	pass
+
+static func FailedTeleportEffect() -> void:
+	AudioServer.set_bus_volume_db(1, -18)
+	AudioServer.set_bus_effect_enabled(1, 0, true)
+	AudioServer.set_bus_effect_enabled(1, 1, true)
+	AudioServer.set_bus_effect_enabled(1, 2, true)
+	pass
+
+static func TurnOffSfxEffects() -> void:
+	AudioServer.set_bus_volume_db(1, 0)
+	for i in range(AudioServer.get_bus_effect_count(1)):
+		AudioServer.set_bus_effect_enabled(1, i, false)
+		pass
 	pass
