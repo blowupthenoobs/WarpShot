@@ -4,7 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://71seeetmaark" path="res://Assets/CircleMask.png" id="2_p6jnw"]
 
 [node name="AimingLaser" type="RayCast2D" node_paths=PackedStringArray("laser", "predictedLandedDot")]
-exclude_parent = false
 target_position = Vector2(500, 0)
 collide_with_areas = true
 script = ExtResource("1_4f7j8")

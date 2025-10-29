@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dphc88j32yqfh" path="res://Assets/Square.png" id="1_oolp2"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_siu27"]
+resource_local_to_scene = true
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_siu27"]
 texture = ExtResource("1_oolp2")

@@ -36,6 +36,9 @@ func _physics_process(delta: float) -> void:
 		laserEndPos = to_local(get_collision_point())
 		pass
 	
+	if(get_collider()):
+		print(get_collider())
+	
 	predictedLandedDot.position = laserEndPos
 	laser.points[1] = laserEndPos
 	pass
