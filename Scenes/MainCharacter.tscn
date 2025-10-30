@@ -9,7 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://c6dqrmlv50cic" path="res://Sounds/ShootEffect.wav" id="4_8bmck"]
 [ext_resource type="AudioStream" uid="uid://buvtvyi2uplq8" path="res://Sounds/TeleportTrimmed.wav" id="5_xyhcr"]
 [ext_resource type="AudioStream" uid="uid://icj1w6lgq87i" path="res://Sounds/BulletDeathSound.wav" id="6_10qyt"]
-[ext_resource type="PackedScene" uid="uid://c0mw4okidpb3b" path="res://Scenes/AimingLaser.tscn" id="9_sko2u"]
+[ext_resource type="PackedScene" uid="uid://k7m88qgdrgge" path="res://Scenes/AimingLaser.tscn" id="11_5q28e"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_64g7q"]
 radius = 126.035706
@@ -45,8 +45,8 @@ position = Vector2(123, 0)
 scale = Vector2(0.4, 0.2)
 texture = ExtResource("3_xcak5")
 
-[node name="AimingLaser" parent="Nozzle" instance=ExtResource("9_sko2u")]
-target_position = Vector2(10000000000000, 0)
+[node name="AimingLaser" parent="Nozzle" instance=ExtResource("11_5q28e")]
+target_position = Vector2(1000000, 50)
 
 [node name="NozzlePoint" type="RemoteTransform2D" parent="Nozzle"]
 position = Vector2(175, 0)
