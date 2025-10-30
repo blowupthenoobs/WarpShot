@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bfha68w01p1bs"]
+[gd_scene load_steps=5 format=3 uid="uid://bfha68w01p1bs"]
 
 [ext_resource type="Script" uid="uid://c7c0jeim6js6a" path="res://Scripts/PlayerBullet.gd" id="1_65pnx"]
 [ext_resource type="PackedScene" uid="uid://b112oc67ogonh" path="res://Scenes/BulletCollisionEffect.tscn" id="2_8osiq"]
 [ext_resource type="Texture2D" uid="uid://bnnchn8h674rq" path="res://Assets/Triangle.png" id="2_38ect"]
+[ext_resource type="AudioStream" uid="uid://dpq8hqbnibd77" path="res://Sounds/TeleportExplosionEffect.wav" id="3_8osiq"]
 
 [node name="Bullet" type="CharacterBody2D"]
 scale = Vector2(0.07999929, 0.07999929)
@@ -10,6 +11,7 @@ collision_layer = 2
 collision_mask = 3
 script = ExtResource("1_65pnx")
 implosionEffect = ExtResource("2_8osiq")
+implosionSound = ExtResource("3_8osiq")
 maxSpeed = 1000.0
 accelleration = 100000.0
 

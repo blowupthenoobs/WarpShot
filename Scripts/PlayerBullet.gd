@@ -1,6 +1,7 @@
 extends "res://Scripts/BulletScript.gd"
 
 @export var implosionEffect: PackedScene
+@export var implosionSound: AudioStream
 var player: PlayerScript
 
 var mostRecentBounce = null
@@ -58,6 +59,7 @@ func collisionEffect(collision: KinematicCollision2D):
 		var instance = implosionEffect.instantiate()
 		add_sibling(instance)
 		instance.position = collision.get_position()
+		MenuScript.instance.PlaySound(implosionSound, 0)
 		#player.teleport(position)
 	queue_free()
 	

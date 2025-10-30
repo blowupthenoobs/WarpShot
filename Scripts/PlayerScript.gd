@@ -6,6 +6,7 @@ class_name PlayerScript
 @export var bullet: PackedScene
 @export var shootSoundEffect: AudioStream
 @export var teleportSoundEffect: AudioStream
+@export var deathSoundEffect: AudioStream
 @export var nozzleBase: Node2D
 @export var nozzleEnd: Node2D
 @export var laser: AimLaserScript
@@ -41,5 +42,6 @@ func die() -> void:
 	var instance = deathEffect.instantiate()
 	add_sibling(instance)
 	instance.starteffect(nozzleBase.rotation, position)
+	MenuScript.instance.PlaySound(deathSoundEffect, 0)
 	visible = false
 	pass
