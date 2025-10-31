@@ -12,7 +12,7 @@ enum ShaderMode {GrayScale = 2, Desaturate = 3, ChromeAber = 5}
 @export var Flash: Node2D
 @export var DeathSlider: Node2D
 @export var SlidePosition: Node2D
-@export var slideSpeed: float
+@export var slideTime: float
 @export var flashSpeed: float
 @export var levelTextFadeSpeed: float
 @export var maxChromeAbber: float
@@ -28,6 +28,7 @@ var rotateAnyway: bool = false
 var playerKilled: bool = false
 var currentShaders: int = 1
 
+var tween: Tween = null
 var chromeAbberStrength: float = 0
 
 func _ready() -> void:
@@ -84,6 +85,8 @@ func PlaySound(sound: AudioStream, vol: float, variation: float = 0) -> void:
 func playerDeath() -> void:
 	EnemyScript.enemyCount = 0
 	playerKilled = true
+	tween = create_tween()
+	tween.tween_property(DeathSlider, "position", SlidePosition.position, slideTime)
 	pass
 
 func badTeleport() -> void:
@@ -98,7 +101,6 @@ func slideDeathEffect(delta: float) -> void:
 		if(VectorsAreEqual(DeathSlider.position, SlidePosition.position)):
 			get_tree().reload_current_scene()
 			TurnOffShaders()
-		DeathSlider.position = DeathSlider.position.lerp(SlidePosition.position, slideSpeed * delta)
 		Flash.modulate = Flash.modulate.lerp(Color.WHITE, flashSpeed * delta)
 		if(Flash.modulate.a < .01 && !VectorsAreEqual(DeathSlider.position, SlidePosition.position)):
 			TurnOnEffect(ShaderMode.Desaturate)

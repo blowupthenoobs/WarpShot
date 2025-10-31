@@ -47,9 +47,9 @@ func StartGameMusic() -> void:
 
 static func FailedTeleportEffect() -> void:
 	AudioServer.set_bus_volume_db(1, 0)
-	AudioServer.set_bus_effect_enabled(1, 0, true)
-	AudioServer.set_bus_effect_enabled(1, 1, true)
-	AudioServer.set_bus_effect_enabled(1, 2, true)
+	#AudioServer.set_bus_effect_enabled(1, 0, true)
+	#AudioServer.set_bus_effect_enabled(1, 1, true)
+	#AudioServer.set_bus_effect_enabled(1, 2, true)
 	pass
 
 static func TurnOffSfxEffects() -> void:
