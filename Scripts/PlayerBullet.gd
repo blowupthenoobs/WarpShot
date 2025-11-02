@@ -59,7 +59,7 @@ func collisionEffect(collision: KinematicCollision2D):
 		var instance = implosionEffect.instantiate()
 		add_sibling(instance)
 		instance.position = collision.get_position()
-		MenuScript.instance.PlaySound(implosionSound, 0)
+		MenuScript.instance.PlaySound(implosionSound, 6)
 		#player.teleport(position)
 	queue_free()
 	

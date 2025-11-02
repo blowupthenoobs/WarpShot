@@ -18,6 +18,7 @@ var songPlaying: String = ""
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	print(AudioServer.get_bus_index("SFX"))
 	instance = self
 	pass # Replace with function body.
 
@@ -25,6 +26,9 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if(songPlaying == "mainMenu"):
 		MusicPlayer.volume_db = lerp(MusicPlayer.volume_db, endingMenuDb, menuMusicDbShiftSpeed * delta)
+		pass
+	if(songPlaying == "game"):
+		MusicPlayer.volume_db = lerp(MusicPlayer.volume_db, endingGameDb, gameMusicDbShiftSpeed * delta)
 		pass
 	pass
 
@@ -46,10 +50,10 @@ func StartGameMusic() -> void:
 	pass
 
 static func FailedTeleportEffect() -> void:
-	AudioServer.set_bus_volume_db(1, 0)
-	#AudioServer.set_bus_effect_enabled(1, 0, true)
-	#AudioServer.set_bus_effect_enabled(1, 1, true)
-	#AudioServer.set_bus_effect_enabled(1, 2, true)
+	AudioServer.set_bus_volume_db(1, -9)
+	AudioServer.set_bus_effect_enabled(1, 0, true)
+	AudioServer.set_bus_effect_enabled(1, 1, true)
+	AudioServer.set_bus_effect_enabled(1, 2, true)
 	pass
 
 static func TurnOffSfxEffects() -> void:

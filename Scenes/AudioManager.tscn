@@ -2,7 +2,7 @@
 
 [ext_resource type="AudioStream" uid="uid://bxn74v3rvdxjs" path="res://Sounds/WarpMenu.ogg" id="1_dygvs"]
 [ext_resource type="Script" uid="uid://dhxo6hwjjwpjc" path="res://Scripts/AudioManagerScript.gd" id="2_i2xd5"]
-[ext_resource type="AudioStream" uid="uid://clokals606l36" path="res://Sounds/EnemyFire.wav" id="3_u6owb"]
+[ext_resource type="AudioStream" uid="uid://ds2rm5vjnkkqi" path="res://Sounds/the-return-of-the-8-bit-era-301292.mp3" id="3_u6owb"]
 
 [node name="AudioManager" type="Node2D" node_paths=PackedStringArray("MusicPlayer")]
 script = ExtResource("2_i2xd5")
@@ -11,6 +11,9 @@ MainMenuMusic = ExtResource("1_dygvs")
 startingMenuDb = -50.0
 menuMusicDbShiftSpeed = 0.3
 GameMusic = ExtResource("3_u6owb")
+startingGameDb = -20.0
+endingGameDb = -10.0
+gameMusicDbShiftSpeed = 5.0
 
 [node name="Music" type="AudioStreamPlayer2D" parent="."]
 volume_db = 15.0
