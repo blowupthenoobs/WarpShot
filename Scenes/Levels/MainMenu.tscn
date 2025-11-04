@@ -38,3 +38,12 @@ texture = ExtResource("3_v2at7")
 position = Vector2(123, 0)
 scale = Vector2(0.4, 0.2)
 texture = ExtResource("4_0t1wx")
+
+[node name="Button" type="Button" parent="."]
+offset_left = -150.0
+offset_top = 232.0
+offset_right = 150.0
+offset_bottom = 304.0
+text = "Toggle Experimental"
+
+[connection signal="pressed" from="Button" to="." method="_toggle_experimental"]

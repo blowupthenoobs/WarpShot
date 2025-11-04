@@ -68,8 +68,8 @@ func _on_menu_button_pressed() -> void:
 
 func _on_next_level_button_pressed() -> void:
 	LevelManager.currentLevel += 1
-	if(LevelManager.currentLevel < LevelManager.Levels.size()):
-		get_tree().change_scene_to_packed(LevelManager.Levels[LevelManager.currentLevel])
+	if((!LevelManager.experimental && LevelManager.currentLevel < LevelManager.Levels.size()) || (LevelManager.experimental && LevelManager.currentLevel < LevelManager.Experimentals.size())):
+		get_tree().change_scene_to_packed(LevelManager.getNextLevel())
 	else:
 		_on_menu_button_pressed()
 	pass # Replace with function body.

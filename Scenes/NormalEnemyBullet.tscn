@@ -6,6 +6,7 @@
 [node name="Bullet" type="CharacterBody2D"]
 scale = Vector2(0.07999929, 0.07999929)
 collision_layer = 2
+collision_mask = 3
 script = ExtResource("1_4g6tc")
 maxSpeed = 100.0
 accelleration = 100000.0

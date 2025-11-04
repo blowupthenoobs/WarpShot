@@ -18,7 +18,6 @@ var songPlaying: String = ""
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	print(AudioServer.get_bus_index("SFX"))
 	instance = self
 	pass # Replace with function body.
 
