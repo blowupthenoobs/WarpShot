@@ -1,13 +1,26 @@
 extends RemoteTransform2D
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+var usingController: bool
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	
 	if(!MenuScript.instance.stopGame || MenuScript.instance.rotateAnyway):
-		look_at(get_global_mouse_position())
+		if(usingController):
+			var aimX = Input.get_joy_axis(0, JOY_AXIS_LEFT_X)
+			var aimY = Input.get_joy_axis(0, JOY_AXIS_LEFT_Y)
+			
+			rotation = Vector2(aimX, aimY).angle()
+		else:
+			look_at(get_global_mouse_position())
+		
+	pass
+
+
+
+func _input(event: InputEvent) -> void:
+	if(event is InputEventMouseMotion):
+		usingController = false
+	if(event is InputEventJoypadMotion):
+		usingController = true
 	pass
