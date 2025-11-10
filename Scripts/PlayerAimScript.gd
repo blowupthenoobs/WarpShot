@@ -10,7 +10,8 @@ func _process(delta: float) -> void:
 			var aimX = Input.get_joy_axis(0, JOY_AXIS_LEFT_X)
 			var aimY = Input.get_joy_axis(0, JOY_AXIS_LEFT_Y)
 			
-			rotation = Vector2(aimX, aimY).angle()
+			if(Vector2(aimX, aimY).length() > 0.7):
+				rotation = Vector2(aimX, aimY).angle()
 		else:
 			look_at(get_global_mouse_position())
 		

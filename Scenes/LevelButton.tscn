@@ -8,7 +8,7 @@
 [sub_resource type="LabelSettings" id="LabelSettings_6qni7"]
 font_size = 90
 
-[node name="LevelButton" type="MenuButton" node_paths=PackedStringArray("label")]
+[node name="LevelButton" type="MenuButton" node_paths=PackedStringArray("label", "highlight")]
 self_modulate = Color(0.105882354, 0.105882354, 0.09411765, 1)
 offset_right = 264.0
 offset_bottom = 264.0
@@ -17,6 +17,7 @@ button_group = SubResource("ButtonGroup_v2at7")
 icon = ExtResource("1_yoeyv")
 script = ExtResource("2_6qni7")
 label = NodePath("Label")
+highlight = NodePath("Sprite2D")
 
 [node name="Label" type="Label" parent="."]
 self_modulate = Color(0, 0.79607844, 1, 1)
@@ -32,5 +33,13 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 language = "English"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+self_modulate = Color(0, 0.79607844, 1, 1)
+show_behind_parent = true
+position = Vector2(132.87567, 131.31316)
+scale = Vector2(1.0371112, 1.024904)
+texture = ExtResource("1_yoeyv")
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]

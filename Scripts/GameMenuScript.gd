@@ -31,6 +31,7 @@ var currentShaders: int = 1
 var tween: Tween = null
 var chromeAbberStrength: float = 0
 
+
 func _ready() -> void:
 	instance = self
 	var root = get_tree().current_scene
@@ -74,6 +75,17 @@ func _on_next_level_button_pressed() -> void:
 		_on_menu_button_pressed()
 	pass # Replace with function body.
 
+
+func _input(event: InputEvent) -> void:
+	if(WinScreen.visible == true):
+		if(event.is_action_pressed("JoyConfirm")):
+			_on_next_level_button_pressed()
+			pass
+		if(event.is_action_pressed("JoyOptions")):
+			_on_menu_button_pressed()
+			pass
+		pass
+	pass
 
 func PlaySound(sound: AudioStream, vol: float, variation: float = 0) -> void:
 	var instance = soundEffectPlayer.instantiate()
